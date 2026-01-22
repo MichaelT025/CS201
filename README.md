@@ -15,9 +15,20 @@ The course focuses on the fundamental concepts of data structures and algorithms
 ## Repository Structure
 
 - `hw/`: Homework assignments focusing on performance testing and functional verification.
-- `inclass/`: Exercises and examples covered durin class sessions.b
+- `inclass/`: Exercises and examples covered during class sessions.
+
+### Week 3 Topics
+- **Solving Recurrences**: Master Method, Recursion Trees, and Substitution Method.
+- **Heaps & Trees**: Binary trees, Heap property, and HeapSort implementation.
+
+### Example: Running Heapsort (Week 3)
+```bash
+g++ -o heapsort inclass/week3/max_heapsort.cpp
+./heapsort
+```
 
 ### Example: Running Insertion Sort
+
 
 ```bash
 g++ -o insertionsort inclass/insertionsort.cpp
