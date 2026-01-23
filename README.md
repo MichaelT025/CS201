@@ -14,8 +14,13 @@ The course focuses on the fundamental concepts of data structures and algorithms
 
 ## Repository Structure
 
-- `hw/`: Homework assignments focusing on performance testing and functional verification.
+- `hw/`: Homework assignments focusing on performance testing and functional verification. Organized by assignment (e.g., `hw/hw0/`).
 - `inclass/`: Exercises and examples covered during class sessions.
+
+### Homework 0: Sorting Algorithms
+- **Implementations**: Insertion Sort and Merge Sort using C++ iterators.
+- **Location**: `hw/hw0/`
+- **Verification**: `functest.cpp` for functional correctness and `perftest.cpp` for performance analysis.
 
 ### Week 3 Topics
 - **Solving Recurrences**: Master Method, Recursion Trees, and Substitution Method.
@@ -35,12 +40,13 @@ g++ -o insertionsort inclass/insertionsort.cpp
 ./insertionsort
 ```
 
-### Example: Running Performance Test
+### Example: Running Performance Test (HW0)
 
 ```bash
-g++ -o perftest hw/perftest.cpp
+g++ -o perftest hw/hw0/perftest.cpp
 ./perftest
 ```
+
 
 ## Languages & Tools
 

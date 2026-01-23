@@ -38,7 +38,7 @@ void conquer(vector<int> *v, int li, int mi, int ri){
 
 void divide(vector<int> *v, int li, int ri){
     if(ri<=li) return;
-    int mi=li+(ri-li)/2;
+    int mi=li+(ri-li)/2;// not (li+ri)/2 to avoid overflow
     divide(v, li, mi);
     divide(v, mi+1, ri);
     conquer(v, li, mi, ri);
