@@ -5,7 +5,8 @@
 #include <algorithm>
 #include <iterator>
 #include <chrono>
-
+#include "insertionSort.cpp"
+#include "mergeSort.cpp"
 int main(int argc, char *argv[]) {
 
 	std::cout << "Problem Size\tTime Taken (seconds)" << std::endl;
@@ -15,7 +16,9 @@ int main(int argc, char *argv[]) {
 	
 		std::generate(a, a+size, std::rand);
 		auto starttime = std::chrono::steady_clock::now();
-		std::sort(a, a+size);
+		//std::sort(a, a+size);
+		//insertionsort(a, a+size);
+		mergesort(a, a+size,a);
 		auto endtime = std::chrono::steady_clock::now();
 		std::chrono::duration<double> timetaken = endtime - starttime;
 		std::cout << size << "\t" << timetaken.count() << std::endl;
