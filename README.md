@@ -21,6 +21,7 @@ The course focuses on the fundamental concepts of data structures and algorithms
 - **Implementations**: Insertion Sort and Merge Sort using C++ iterators.
 - **Location**: `hw/hw0/`
 - **Verification**: `functest.cpp` for functional correctness and `perftest.cpp` for performance analysis.
+- **Report**: `report.md` containing performance data and analysis.
 
 ### Week 3 Topics
 - **Solving Recurrences**: Master Method, Recursion Trees, and Substitution Method.
