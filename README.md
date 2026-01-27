@@ -27,6 +27,10 @@ The course focuses on the fundamental concepts of data structures and algorithms
 - **Solving Recurrences**: Master Method, Recursion Trees, and Substitution Method.
 - **Heaps & Trees**: Binary trees, Heap property, and HeapSort implementation.
 
+### Week 4 Topics
+- **Quick Sort**: Partitioning strategies, pivot selection, and complexity analysis.
+- **Linear-Time Sorting**: Counting Sort, Radix Sort, and Bucket Sort algorithms.
+
 ### Example: Running Heapsort (Week 3)
 ```bash
 g++ -o heapsort inclass/week3/max_heapsort.cpp

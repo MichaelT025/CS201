@@ -3,6 +3,9 @@
 
 using namespace std;
 
+// Not stable
+// Time complexity: O(nlogn)
+// Space complexity: O(n)
 
 void maxheapify(vector<int>& arr, int i) {
     int l=2*i;
