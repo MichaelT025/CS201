@@ -39,7 +39,7 @@ void heapSort(vector<int>& arr) {
 }
 
 int main() {
-        vector<int> arr={12, 13, 11, 6, 5};
+    vector<int> arr={12, 13, 11, 6, 5};
     cout<<"Original array: "<<endl;
     for(int num: arr){
         cout<<num<<" ";

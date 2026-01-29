@@ -30,6 +30,7 @@ The course focuses on the fundamental concepts of data structures and algorithms
 ### Week 4 Topics
 - **Quick Sort**: Partitioning strategies, pivot selection, and complexity analysis.
 - **Linear-Time Sorting**: Counting Sort, Radix Sort, and Bucket Sort algorithms.
+- **Hash Tables**: Hash functions, collision handling (chaining, open addressing), and load factor.
 
 ### Example: Running Heapsort (Week 3)
 ```bash
