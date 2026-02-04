@@ -32,6 +32,9 @@ The course focuses on the fundamental concepts of data structures and algorithms
 - **Linear-Time Sorting**: Counting Sort, Radix Sort, and Bucket Sort algorithms.
 - **Hash Tables**: Hash functions, collision handling (chaining, open addressing), and load factor.
 
+### Week 5 Topics
+- **Binary Trees**: Traversal algorithms including Preorder, Inorder, Postorder (DFS), and Level Order (BFS).
+
 ### Example: Running Heapsort (Week 3)
 ```bash
 g++ -o heapsort inclass/week3/max_heapsort.cpp
