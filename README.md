@@ -34,6 +34,7 @@ The course focuses on the fundamental concepts of data structures and algorithms
 
 ### Week 5 Topics
 - **Binary Trees**: Traversal algorithms including Preorder, Inorder, Postorder (DFS), and Level Order (BFS).
+- **Tree Construction**: Building unique binary trees from various traversal pairs (e.g., Inorder + Preorder/Postorder/Level Order).
 
 ### Example: Running Heapsort (Week 3)
 ```bash
