@@ -1,6 +1,6 @@
 ## Pseudocode:
 
-```py
+```cpp
 quicksort(A(array),p(int),r(int))
     if p<r
         q=Partition(A,p,r)
