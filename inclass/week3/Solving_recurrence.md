@@ -27,7 +27,7 @@ Case 2 (same order):
 $$
 f(n) = \Theta\left(n^c \log^k n\right)\ \text{for some}\ k \ge 0
 \quad \Rightarrow \quad
-T(n) = \Theta\left(n^c \log^{k+1} n\right)
+T(n) = \Theta\left(n^c \log n\right)
 $$
 
 Case 3 (polynomially larger):

@@ -1,4 +1,4 @@
-# Non Comparison Sorts
+# Comparison Based Sorts
 
 ## Insertion Sort
 
@@ -6,6 +6,7 @@
 - gets a key and compares it to the items in the array then inserts it in the correct position
 
 ### Pseudocode
+
 ```cpp
 
 insertionSort(array A){
@@ -21,13 +22,16 @@ insertionSort(array A){
 }
 
 ```
+
 Average Case: O(n^2)
+
 Best Case: O(n)  when the array is already sorted
+
 Worst Case: O(n^2) when the array is sorted in reverse order
 
 Space Complexity: O(1) In place
-Stable: Yes
 
+Stable: Yes
 
 ## Merge Sort
 
@@ -37,6 +41,7 @@ Stable: Yes
 - merge the two halves
 
 ### Pseudocode
+
 ```cpp
 
 
@@ -87,11 +92,15 @@ mergeSort(array A,int lo, int hi){
     merge(A,lo,mid,hi);
 }
 ```
+
 Average Case: O(nlogn)
+
 Best Case: O(nlogn)
+
 Worst Case: O(nlogn)
 
 Space Complexity: O(n) Not in place
+
 Stable: Yes
 
 ## Quick Sort
@@ -102,6 +111,7 @@ Stable: Yes
 - sort the two subarrays recursively
 
 ### Pseudocode
+
 ```cpp
 
 partition(array A, int low, int high){
@@ -127,10 +137,15 @@ quicksort(array A, int low, int high){
 }
 
 ```
+
 Average Case: O(nlogn)
+
 Best Case: O(nlogn)
+
 Worst Case: O(n^2) unbalanced partitioning (when the array is sorted or reverse sorted)
+
 Space Complexity: O(logn) Not in place <- successive function calls on the call stack
+
 Stable: No
 
 ## Heap Sort
@@ -139,6 +154,7 @@ Stable: No
 - then reccursively swaps the root with the last element and heapifies the remaining array
 
 ### Pseudocode
+
 ```cpp
 
 heapify(Array A, int i){
@@ -170,24 +186,32 @@ heapsort(array A){
 }
 
 ```
+
 Average Case: O(nlogn)
+
 Best Case: O(nlogn)
+
 Worst Case: O(nlogn)
+
 Space Complexity: O(1) In place
+
 Stable: No
 
-
-# Linear (Comparison Based) Sorting
+# Linear (Non-Comparison Based) Sorting
 
 ## Counting Sort
 
 ```cpp
-
 ```
+
 Average Case: O(n+k)
+
 Best Case: O(n+k)
+
 Worst Case: O(n+k)
+
 Space Complexity: O(k) Not in place
+
 Stable: Yes
 
 ## Radix Sort
@@ -201,7 +225,6 @@ radixsort(array A){
   }   
 }
 ```
-
 
 ## Bucket Sort
 

@@ -23,6 +23,11 @@ The course focuses on the fundamental concepts of data structures and algorithms
 - **Verification**: `functest.cpp` for functional correctness and `perftest.cpp` for performance analysis.
 - **Report**: `report.md` containing performance data and analysis.
 
+### Homework 1: Word Frequency Counter
+- **Description**: C++ program to count word frequencies from a text file and output them sorted by count and alphabetically.
+- **Location**: `hw/hw1/`
+- **Requirements**: $O(N \log N)$ worst-case time complexity.
+
 ### Week 3 Topics
 - **Solving Recurrences**: Master Method, Recursion Trees, and Substitution Method.
 - **Heaps & Trees**: Binary trees, Heap property, and HeapSort implementation.
