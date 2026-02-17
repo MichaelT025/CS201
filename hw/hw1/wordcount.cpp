@@ -35,7 +35,6 @@ void parseText(const string& text, vector<string>& tokens) {
 
 
 int main(int argc, char* argv[]){
-    string text;
     string file;
     if(argc > 1) file=argv[1];
     else{
@@ -54,6 +53,7 @@ int main(int argc, char* argv[]){
     //capture execution start time
     auto start = chrono::high_resolution_clock::now();
 
+    string text;
     while(getline(inputfile, text)){
         parseText(text, tokens);
     }
@@ -85,7 +85,7 @@ int main(int argc, char* argv[]){
     
     for (auto it = words_by_count.rbegin(); it != words_by_count.rend(); ++it) {
         for(const auto& word: it->second){
-            //cout<<word<<": "<<it->first<<endl;
+            cout<<word<<": "<<it->first<<endl;
             distinct_count++;
         }
     }
