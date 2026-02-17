@@ -41,6 +41,9 @@ The course focuses on the fundamental concepts of data structures and algorithms
 - **Binary Trees**: Traversal algorithms including Preorder, Inorder, Postorder (DFS), and Level Order (BFS).
 - **Tree Construction**: Building unique binary trees from various traversal pairs (e.g., Inorder + Preorder/Postorder/Level Order).
 
+### Week 7 Topics
+- **Binary Search Trees (BST)**: BST properties, implementation details, and core operations (Find, Insert, Remove).
+
 ### Example: Running Heapsort (Week 3)
 ```bash
 g++ -o heapsort inclass/week3/max_heapsort.cpp
