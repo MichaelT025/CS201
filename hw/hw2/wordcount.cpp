@@ -2,7 +2,7 @@
 Name: Michael Tesfaye
 Email:mktesfaye@crimson.ua.edu
 Course Section: Spring 2026 CS 201 – 002    
-Homework #:2
+Homework #2
 To Compile: g++ wordcount.cpp -o wordcount
 To Run: ./wordcount <filename>
 */
