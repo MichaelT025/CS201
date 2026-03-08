@@ -1,3 +1,13 @@
+/*
+Name: Michael Tesfaye
+Email:mktesfaye@crimson.ua.edu
+Course Section: Spring 2026 CS 201 – 002    
+Homework #:2
+To Compile: g++ STMain.cpp -o STMain
+To Run: ./STMain
+*/
+
+
 #ifndef _ST_HPP_
 #define _ST_HPP_
 
@@ -5,6 +15,10 @@
 
 #include "RBT.hpp"
 #include "RBTPrint.hpp"
+#include <iostream>
+#include <functional>
+#include <vector>
+
 
 template <class Key, class Type>
 class ST : public RedBlackTree<Key, Type> {
@@ -30,7 +44,7 @@ public:
 	// O(LogN), N size of ST
 	Type& operator[](const Key& key) {
 		iterator found=this->find(key);
-		if(found) return iterator->value;
+		if(found) return found->value;
 		else{
 			iterator newNode= this->Insert(key, Type());
 			nodeCount++;
@@ -54,7 +68,8 @@ public:
 	// remove element at the given position
 	// amortized constant
 	void remove(iterator position) {
-		this->Delete(position);
+		if(!position) return;
+		this->RemoveNode(position);
 		nodeCount--;
 	};
 
@@ -62,11 +77,19 @@ public:
 	// return number of elements removed (either 0 or 1)
 	// O(logN), N size of ST
 	std::size_t remove(const Key& key) {
+		if(this->Remove(key)) {
+			nodeCount--;
+			return 1;
+		}
+		return 0;
 	};  
 
 	// removes all elements from the ST, after this size() returns 0
 	// linear in the size of the ST
 	void clear() {
+		this->DeleteTree(this->root);
+		this->root = nullptr;
+		nodeCount = 0;
 	}; 
 
 	// checks if ST has no elements; true is empty, false otherwise
