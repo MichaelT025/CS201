@@ -13,49 +13,30 @@ public:
 
 	// Constructors
 	// constant
-	ST() : nodeCount(0) {
-	}
+	ST() {
+	}; 
 
 	// Destructor
 	// linear in the size of the ST
-	~ST() {
-		this->DeleteTree(this->root);
-		this->root = nullptr;
-		nodeCount = 0;
-	}
+	~ST(){
+	};
 
 	// access or insert specifies element
 	// inserts if the key is not present and returns a reference to
 	// the value corresponding to that key
 	// O(LogN), N size of ST
 	Type& operator[](const Key& key) {
-		iterator found=this->find(key);
-		if(found) return iterator->value;
-		else{
-			iterator newNode= this->Insert(key, Type());
-			nodeCount++;
-			return newNode->value;
-		}
 	}; 
 
 	// insert a (key, value) pair, if the key already exists
 	// set the new value to the existing key
 	// O(LogN), N size of ST
 	void insert(const Key& key, const Type& value) {
-		iterator exists=this->Search(key);
-		//check if exists, if so update value
-		if(exists) exists->value=value;
-		else{ //otherwise insert new node
-			this->Insert(key, value);
-			nodeCount++;
-		}
 	};
 
 	// remove element at the given position
 	// amortized constant
 	void remove(iterator position) {
-		this->Delete(position);
-		nodeCount--;
 	};
 
         // remove element with keyvalue key and 
@@ -72,50 +53,34 @@ public:
 	// checks if ST has no elements; true is empty, false otherwise
 	// constant
 	bool empty() const {
-		if (!this->root) return true;
-		return false;
 	}; 
 
 	// returns number of elements in ST
 	// constant
 	std::size_t size() const {	
-		return nodeCount;
 	}; 
 
 	// returns number of elements that match keyvalue key
 	// value returned is 0 or 1 since keys are unique
 	// O(LogN), N size of ST
 	std::size_t count(const Key& key) {
-		return this->Search(key)? 1:0;
 	}; 
 
 	// find an element with keyvalue key and return 
 	// the iterator to the element found, nullptr if not found
 	// O(LogN), N size of ST
 	iterator find(const Key& key) {
-		iterator found=this->Search(key);
-		return found;
 	};
 
 	// check if key exists in ST
 	// O(LogN), N size of ST
 	bool contains(const Key& key) {
-		return this->find(key)? true:false;
 	};
 
         // return contents of ST as a vector of (key,value) pairs
         // O(N), N size of ST
         std::vector<std::pair<Key, Type> > toVector() {
-			std::vector<std::pair<Key, Type>> result;
-			std::function<void (RBTNode<Key, Type>*)> inorder=[&](RBTNode<Key, Type>* node){
-				if(!node) return;
-				inorder(node->left);
-				result.push_back({node->key, node->value});
-				inorder(node->right);
-			};
-			inorder(this->root);
-			return result;
-		};
+        };
 
 	// print the symbol table as Red-Black Tree
 	// O(N), N size of ST
@@ -126,10 +91,6 @@ public:
 	// print the symbol table in sorted order
 	// O(N), N size of ST
 	void display() {
-		std::vector<std::pair<Key, Type>> table=toVector();
-		for(const auto &it: table){
-			std::cout<<it.first<<": "<<it.second<<std::endl;
-		}
 	};
 
 private:
