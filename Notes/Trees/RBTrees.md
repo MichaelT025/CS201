@@ -75,6 +75,7 @@ rightRotate(T,y){
 1. z's uncle is red
 
    - recolor parent, grandparent and uncle
+   - move z to grandparent
 2. z's uncle is black and (triangle)
 
 ```cpp
