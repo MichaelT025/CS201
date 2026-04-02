@@ -12,9 +12,10 @@ To Run: ./movie_actor <db_file> <query_file>
 #include <regex>
 #include <unordered_map>
 #include <vector>
+#include <chrono>
 using namespace std;
 
-void print(vector<string> names){
+void print(vector<string> &names){
     for(const auto& name : names){
         cout << name << endl;
     }
@@ -35,27 +36,35 @@ int main(int argc, char* argv[]){
         cout<<"Error opening "<<argv[2]<<endl;
         return 1;
     }
-    unordered_map<string, vector<string>> byactor;
-    unordered_map<string, vector<string>> bymovie;
+    unordered_map<string, vector<string>> byactor;// map to track actors and their movies
+    unordered_map<string, vector<string>> bymovie;// map to track movies and their actors
     string line;
     regex delim("/");
 
+    //see time to build maps
+    auto start_time= chrono::high_resolution_clock::now();
+    int count=0; //count to keep track of records
     while(getline(db_file, line)){
         auto begin=sregex_token_iterator(line.begin(),line.end(), delim, -1);
         auto end=sregex_token_iterator();
         string movie="";
         for(auto it=begin; it!=end;++it){
-            if(movie.empty()){
+            if(movie.empty()){ //first value is movie name
                 movie=*it;
-            } else {
+            } else { //subsequent values are actor names
                 byactor[*it].push_back(movie);
                 bymovie[movie].push_back(*it);
             }
         }
+        count++;
     }
+    auto end_time=chrono::high_resolution_clock::now();
+    chrono::duration<double> build_time = end_time - start_time;
+
     db_file.close();
+    start_time=chrono::high_resolution_clock::now();
     while(getline(query_file, line)){
-        bool found=0;
+        bool found=0;       //to check if value exists
         if(byactor.find(line)!=byactor.end()){
             found=1;
             print(byactor[line]);
@@ -65,9 +74,15 @@ int main(int argc, char* argv[]){
             print(bymovie[line]);
         }
         if(!found){
-            cout<<"Not Found"<<endl;
+            cout<<line<<" Not Found"<<endl;
         }
     }
+    end_time=chrono::high_resolution_clock::now();
+    chrono::duration<double> query_time = end_time - start_time;
+    cout<<"Number of records: "<<count<<endl;
+    cout<<"Time to build maps: "<<build_time.count()<<" seconds"<<endl;
+    cout<<"Time to answer queries: "<<query_time.count()<<" seconds"<<endl;
+    cout<<"Total time taken: "<<build_time.count() + query_time.count()<<" seconds"<<endl;
     query_file.close();
     return 0;
 }
