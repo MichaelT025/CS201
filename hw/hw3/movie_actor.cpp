@@ -41,8 +41,7 @@ int main(int argc, char* argv[]){
     string line;
     regex delim("/");
 
-    //see time to build maps
-    auto start_time= chrono::high_resolution_clock::now();
+    auto start_time= chrono::high_resolution_clock::now(); //measure time to build maps
     int count=0; //count to keep track of records
     while(getline(db_file, line)){
         auto begin=sregex_token_iterator(line.begin(),line.end(), delim, -1);
@@ -62,7 +61,7 @@ int main(int argc, char* argv[]){
     chrono::duration<double> build_time = end_time - start_time;
 
     db_file.close();
-    start_time=chrono::high_resolution_clock::now();
+    start_time=chrono::high_resolution_clock::now(); //measure time to answer queries
     while(getline(query_file, line)){
         bool found=0;       //to check if value exists
         if(byactor.find(line)!=byactor.end()){
@@ -77,6 +76,7 @@ int main(int argc, char* argv[]){
             cout<<line<<" Not Found"<<endl;
         }
     }
+    
     end_time=chrono::high_resolution_clock::now();
     chrono::duration<double> query_time = end_time - start_time;
     cout<<"Number of records: "<<count<<endl;
@@ -84,5 +84,6 @@ int main(int argc, char* argv[]){
     cout<<"Time to answer queries: "<<query_time.count()<<" seconds"<<endl;
     cout<<"Total time taken: "<<build_time.count() + query_time.count()<<" seconds"<<endl;
     query_file.close();
+    
     return 0;
 }
