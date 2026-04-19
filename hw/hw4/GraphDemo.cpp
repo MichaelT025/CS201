@@ -68,8 +68,14 @@ int main(int argc, char *argv[]) {
 
 	// test DFS
 	std::cout << "Results from DFS:\n";
-	G.dfs();
-	std::cout << std::endl;
+	G.dfs(src);
+	for (int i = 0; i < V; ++i) {
+		if (i != src) {
+		   std::cout << src << " to " << i << ": ";
+		   G.print_path(src, i);
+		   std::cout << std::endl;
+		}
+	}
 
 	return 0;
 }
